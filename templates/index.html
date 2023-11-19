@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Text Analysis</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4">Text Analysis</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="texto">Ingresa un texto a elección:</label>
+                <textarea class="form-control" name="texto" id="texto" rows="3">{{ texto }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="letra1">Ingresa la primera letra:</label>
+                <input type="text" class="form-control" name="letra1" id="letra1" value="{{ letras[0] }}">
+            </div>
+            <div class="form-group">
+                <label for="letra2">Ingresa la segunda letra:</label>
+                <input type="text" class="form-control" name="letra2" id="letra2" value="{{ letras[1] }}">
+            </div>
+            <div class="form-group">
+                <label for="letra3">Ingresa la tercera letra:</label>
+                <input type="text" class="form-control" name="letra3" id="letra3" value="{{ letras[2] }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Analizar Texto</button>
+        </form>
+
+        <!-- Display analysis results here -->
+        <div class="mt-4">
+            <h3>Resultados del Análisis</h3>
+
+            <div class="form-group">
+                <label for="resultado">CANTIDAD DE LETRAS</label>
+                <textarea class="form-control" rows="3" readonly>
+                    Hemos encontrado la primera letra '{{ letras[0] }}' repetida {{ cantidad_letras[0] }} veces
+                    Hemos encontrado la segunda letra '{{ letras[1] }}' repetida {{ cantidad_letras[1] }} veces
+                    Hemos encontrado la tercera letra '{{ letras[2] }}' repetida {{ cantidad_letras[2] }} veces
+                </textarea>
+            </div>
+
+            <!-- Otros resultados aquí... -->
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
